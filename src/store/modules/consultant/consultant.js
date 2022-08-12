@@ -39,7 +39,7 @@ export const consultant = {
                 //     "Content-Type": "application/json",
                 //     "X-localization": "es"
                 // }
-                const response = await fetch("http://agenceconsultant.42web.io/api/v1/consultant");
+                const response = await fetch("https://consultanttestagence.000webhostapp.com/api/v1/consultant/");
                 // .then(response => response.json())
                 // .then(data => (commit("SET_CONSULTANTS", data)));
                 if (!response.ok) {
@@ -69,7 +69,7 @@ export const consultant = {
                 // }
 
                 //  await fetch("https://consultanttestagence.000webhostapp.com/api/v1/consultant", options);
-                const response = await fetch("http://agenceconsultant.42web.io/api/v1/consultant/", {
+                const response = await fetch("https://consultanttestagence.000webhostapp.com/api/v1/consultant/", {
                     method: 'POST',
                     headers: {
                         // 'Access-Control-Allow-Methods':'POST, GET',
