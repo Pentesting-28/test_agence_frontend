@@ -45,7 +45,6 @@ export const consultant = {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-
                 const data = await response.json();
                 console.log(data);
                 commit("SET_CONSULTANTS", data);
@@ -73,7 +72,6 @@ export const consultant = {
                 const response = await fetch("http://agenceconsultant.42web.io/api/v1/consultant/", {
                     method: 'POST',
                     headers: {
-                        'Access-Control-Allow-Origin' : 'http://172.16.31.43:8080',
                         // 'Access-Control-Allow-Methods':'POST, GET',
                         'Accept':'application/json',
                         'content-type':'application/json',
