@@ -56,7 +56,7 @@ export const consultant = {
                 // const data = await response.json();
                 const url = "http://agenceconsultant.42web.io/api/v1/consultant/";
                 const headers = {
-                    "Access-Control-Allow-Origin": "http://172.16.31.43:8080/",
+                    "Access-Control-Allow-Origin": "https://pentesting-28.github.io/test_agence_frontend/",
                     'Access-Control-Allow-Headers':'Origin, X-Requested-With, Content-Type, Accept'
                 }
                 
