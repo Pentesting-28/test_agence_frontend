@@ -39,16 +39,16 @@ export const consultant = {
                 //     "Content-Type": "application/json",
                 //     "X-localization": "es"
                 // }
-                const response = await fetch("https://consultanttestagence.000webhostapp.com/api/v1/consultant/");
+                const response = await fetch("https://consultanttestagence.000webhostapp.com/api/v1/consultant")
                 // .then(response => response.json())
                 // .then(data => (commit("SET_CONSULTANTS", data)));
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                console.log(data);
-                commit("SET_CONSULTANTS", data);
-                return data;
+                console.log(data)
+                commit("SET_CONSULTANTS", data)
+                return data
             } catch (error) {
                 return Promise.reject(error);
             }
@@ -72,7 +72,7 @@ export const consultant = {
                 const response = await fetch("https://consultanttestagence.000webhostapp.com/api/v1/consultant/", {
                     method: 'POST',
                     headers: {
-                        // 'Access-Control-Allow-Methods':'POST, GET',
+                        'Access-Control-Allow-Methods':'POST, GET',
                         'Accept':'application/json',
                         'content-type':'application/json',
                         // 'Access-Control-Allow-Headers': "Origin, X-Api-Key, X-Requested-With, Access-Control-Allow-Headers, Content-Type, Accept, Authorization",
