@@ -55,36 +55,46 @@ export const consultant = {
         },
         async CONSULTANT_SHOW({ commit }, payload) {
             try {
-                // const response = await Api.post('/api/v1/consultant', payload);
-                // commit("SET_CONSULTANTS_SHOW", response.data.data);
-                // console.log(response.data)
-                // return response.data;
-                // let options = {
-                //     method: 'POST',
-                //     headers: {
-                //         'Content-Type':
-                //             'application/json;charset=utf-8'
-                //     },
-                //     body: payload
-                // }
-
-                //  await fetch("https://consultanttestagence.000webhostapp.com/api/v1/consultant", options);
-                const response = await fetch("https://consultanttestagence.000webhostapp.com/api/v1/consultant/", {
+                const url = "https://consultanttestagence.000webhostapp.com/api/v1/consultant/";
+                
+                const configHeaders = {
+                    'Content-Type':'application/json',
+                    // 'Access-Control-Allow-Origin': '*',
+                    // 'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+                    // 'Access-Control-Allow-Headers': 'X-PINGOTHER, Content-Type',
+                    // 'Access-Control-Max-Age': 86400
+                    // "Content-Type": "text/plain"
+                    
+                };
+                console.log('Hello')
+                const response = await fetch(url, {
                     method: 'POST',
+                    // headers: configHeaders,
                     headers: {
-                        'Access-Control-Allow-Methods':'POST, GET',
-                        'Accept':'application/json',
-                        'content-type':'application/json',
-                        // 'Access-Control-Allow-Headers': "Origin, X-Api-Key, X-Requested-With, Access-Control-Allow-Headers, Content-Type, Accept, Authorization",
-                        // 'cache-control': 'no-cache'
-                    },
-                    body: JSON.stringify(payload)
+                        // the content type header value is usually auto-set
+                        // depending on the request body
+                        "Content-Type": "text/plain;charset=UTF-8"
+                      },
+                      //body: undefined, // string, FormData, Blob, BufferSource, or URLSearchParams
+                      referrer: "about:client", // or "" to send no Referer header,
+                      // or an url from the current origin
+                      referrerPolicy: "no-referrer-when-downgrade", // no-referrer, origin, same-origin...
+                      mode: "cors", // same-origin, no-cors
+                      credentials: "same-origin", // omit, include
+                      cache: "default", // no-store, reload, no-cache, force-cache, or only-if-cached
+                      redirect: "follow", // manual, error
+                      integrity: "", // a hash, like "sha256-abcdef1234567890"
+                      keepalive: false, // true
+                      signal: undefined, // AbortController to abort request
+                      window: window, // null
+                      body: JSON.stringify(payload)
                 } );
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                const data = await response.json();
 
+                const data = await response.json();
+                console.log('Hello', data)
                 commit("SET_CONSULTANTS_SHOW", data);
 
                 return data;
