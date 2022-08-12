@@ -68,9 +68,10 @@ export const consultant = {
                 };
                 console.log('Hello')
                 const response = await fetch(url, {
-                    mode: 'no-cors',
+                    // mode: 'no-cors',
                     method: 'POST',
                     headers: {
+                        'Access-Control-Allow-Origin':'http://192.168.168.114:8080/',
                     'Content-Type': 'application/json'
                     },
                     // method: 'POST',
