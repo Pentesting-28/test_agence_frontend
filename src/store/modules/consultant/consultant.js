@@ -39,37 +39,13 @@ export const consultant = {
                 //     "Content-Type": "application/json",
                 //     "X-localization": "es"
                 // }
-                const url = "http://agenceconsultant.42web.io/api/v1/consultant/";
-                const response = await fetch(url,{
-                    statusCode: 200,
-                    method : "GET",
-                    // headers: {
-                    //     "Access-Control-Allow-Headers" : "Content-Type",
-                    //     "Access-Control-Allow-Origin": "*",
-                    //     "Access-Control-Allow-Methods": "POST,GET"
-                    // },
-                });
+                const response = await fetch("http://agenceconsultant.42web.io/api/v1/consultant");
                 // .then(response => response.json())
                 // .then(data => (commit("SET_CONSULTANTS", data)));
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
 
-                // const data = await response.json();
-                // const url = "http://agenceconsultant.42web.io/api/v1/consultant/";
-                // const headers = {
-                //     "Access-Control-Allow-Origin": "https://pentesting-28.github.io/test_agence_frontend/",
-                //     'Access-Control-Allow-Headers':'Origin, X-Requested-With, Content-Type, Accept'
-                // }
-                
-                // const response = await fetch(url, {
-                //     method : "GET",
-                //     // mode: "cors",
-                //     headers: headers
-                // });
-                // if (!response.ok) {
-                //     throw new Error(`HTTP error! status: ${response.status}`);
-                // }
                 const data = await response.json();
                 console.log(data);
                 commit("SET_CONSULTANTS", data);
@@ -97,6 +73,7 @@ export const consultant = {
                 const response = await fetch("http://agenceconsultant.42web.io/api/v1/consultant/", {
                     method: 'POST',
                     headers: {
+                        'Access-Control-Allow-Origin' : 'http://172.16.31.43:8080',
                         // 'Access-Control-Allow-Methods':'POST, GET',
                         'Accept':'application/json',
                         'content-type':'application/json',
