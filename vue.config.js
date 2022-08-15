@@ -3,6 +3,9 @@ module.exports = defineConfig({
   transpileDependencies: [
     'vuetify'
   ],
-  // publicPath: '/test_agence_frontend/'
+  devServer: {
+    proxy: 'http://localhost:8080',
+  },
+  publicPath: '/test_agence_frontend/'
   
 })
