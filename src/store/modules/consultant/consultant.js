@@ -58,28 +58,28 @@ export const consultant = {
         },
         async CONSULTANT_SHOW({ commit }, payload) {
             try {
-                const response = await Api.post('/api/v1/consultant/hola', payload);
-                commit("SET_CONSULTANTS_SHOW", response.data.data);
-                console.log('update',response.data)
-                return response.data;
+                // const response = await Api.post('/api/v1/consultant/hola', payload);
+                // commit("SET_CONSULTANTS_SHOW", response.data.data);
+                // console.log('update',response.data)
+                // return response.data;
                 //    AQCS<2C$WUw6g-m%     }>v*+4[rVOFnUP&m
-                // const response = await fetch(
-                //     'https://consultanttestagence.000webhostapp.com/test_agence_backend/public/api/v1/consultant/hola'
-                //     ,{
-                //         method: 'POST',
-                //         headers: {
-                //             "Accept": "application/json */*",
-                //             "Content-Type": "application/json"
-                //         }
-                //     }
-                // );
-                // if (!response.ok) {
-                //     throw new Error(`HTTP error! status: ${response.status}`);
-                // }
-                // const data = await response.json();
-                // commit("SET_CONSULTANTS_SHOW", data);
-                // console.log('update',data)
-                // return data;
+                const response = await fetch(
+                    'https://consultanttestagence.000webhostapp.com/test_agence_backend/public/api/v1/consultant/hola'
+                    ,{
+                        method: 'POST',
+                        headers: {
+                            "Accept": "application/json",
+                            "Content-Type": "application/json"
+                        }
+                    }
+                );
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                commit("SET_CONSULTANTS_SHOW", data);
+                console.log('update',data)
+                return data;
             } catch (error) {
                 return Promise.reject(error);
             }

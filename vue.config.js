@@ -4,7 +4,7 @@ module.exports = defineConfig({
     'vuetify'
   ],
   devServer: {
-    proxy: 'http://localhost:8080',
+    proxy: 'https://pentesting-28.github.io/test_agence_frontend/',
   },
   publicPath: '/test_agence_frontend/'
   
