@@ -3,5 +3,6 @@ module.exports = defineConfig({
   transpileDependencies: [
     'vuetify'
   ],
-  publicPath: '/test_agence_frontend/'
+  // publicPath: '/test_agence_frontend/'
+  
 })

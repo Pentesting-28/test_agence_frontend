@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 const Api = axios.create({
-    baseURL: 'http://127.0.0.1:8000',
+    baseURL: 'https://consultanttestagence.000webhostapp.com/test_agence_backend/public',
     // baseURL: process.env.MIX_APP_URL,
     headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
         "Content-Type": "application/json",
-        // "X-localization": "es"
+    //     // "X-localization": "es"
     }
 });
 
