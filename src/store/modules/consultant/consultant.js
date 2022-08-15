@@ -40,6 +40,7 @@ export const consultant = {
                     ,{
                         method: 'GET',
                         // headers: {
+                        //     // 'Access-Control-Allow-Origin': '*',
                         //     Accept: "application/json",
                         //     'Content-Type': "application/json",
 
@@ -59,13 +60,14 @@ export const consultant = {
         },
         async CONSULTANT_SHOW({ commit }, payload) {
             try {
+                console.log('rescurso deploy');
+                
                 const response = await fetch('https://consultanttestagence.000webhostapp.com/test_agence_backend/public/api/v1/consultant/performance', {
                     method: 'POST',
                     body: JSON.stringify(payload),
                     headers: {
-                        'Accept': "application/json",
+                        Accept: "application/json",
                         'Content-Type': 'application/json',
-                        'Access-Control-Allow-Origin': '*',
                     },
                 });
                 
