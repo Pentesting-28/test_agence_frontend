@@ -227,4 +227,10 @@ export default {
       background-color: transparent !important;
     }
   }
+  @media only screen and (max-width: 760px), (min-width: 768px) and (max-width: 1024px) {
+    /* ... */
+    select {
+        width: 150px;
+    }
+  }
 </style>

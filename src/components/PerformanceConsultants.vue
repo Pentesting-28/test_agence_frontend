@@ -118,7 +118,6 @@ export default {
 
         const dataConsultan = response.data;
         const sizeData = dataConsultan.length;
-        console.log(response)
 
         if(sizeData > 0)
         {
