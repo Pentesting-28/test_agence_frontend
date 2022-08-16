@@ -6,6 +6,9 @@ module.exports = defineConfig({
   publicPath: process.env.NODE_ENV === 'production'
     ? '/test_agence_frontend/'
     : '/',
+    // devServer: {
+    //   host: 'http://localhost:8080'
+    // }
   // devServer: {
   //   proxy: 'https://pentesting-28.github.io/test_agence_frontend/',
   // },
